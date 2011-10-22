@@ -16,8 +16,13 @@ class UsersController < ApplicationController
   end
 
   def answer
-    Pusher['ask_channel'].trigger('question', params[:num])
+    Pusher['answer_channel'].trigger('question', params[:num])
     render :text => nil
+  end
+  
+  def checkin
+    current_user.update_attribute :last_active, Time.now
+    render :json => User.active_ids
   end
   
   def index

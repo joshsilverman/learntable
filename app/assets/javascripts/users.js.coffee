@@ -22,8 +22,36 @@ $ ->
         askChannel = pusher.subscribe 'ask_channel'
         askChannel.bind 'question', (num) -> $('.question').html "Can you count to #{num}?"
         
+    #checkin every n seconds
+    checkin = ->
+        $.get(
+            "/users/checkin"
+            (active_ids) ->
+                old_ids = $(".student").map (i, elmnt) ->
+                    parseInt($(elmnt).attr 'user_id')
+                #add new
+                $.each active_ids, (i, active_id) ->
+                    if ($.inArray active_id, old_ids) == -1 
+                        $('.student_barrier').append "<div class='student boy' user_id='#{active_id}'>#{active_id}</div>"
+                #remove old
+                $.each old_ids, (i, old_id) ->
+                    if ($.inArray old_id, active_ids) == -1 
+                        $(".student[user_id=#{old_id}]").remove()
+                positionStudents()
+                
+        )
+        
+    #position student
+    positionStudents = ->
+        $('.student').each (i, elmnt) ->
+            console.log i
+            console.log 100 % ((i + 1) * 60)
+            $(elmnt).css("left", 100 % ((i + 1) * 80))
+        
     #load
     load = ->
+        positionStudents()
         pubListeners()
         subscribeListeners()
+        setInterval(checkin, 500)
     load()

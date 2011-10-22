@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111022042428) do
+ActiveRecord::Schema.define(:version => 20111022054920) do
 
   create_table "questions", :force => true do |t|
     t.string "name"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20111022042428) do
     t.string   "uid"
     t.string   "name"
     t.integer  "points"
+    t.datetime "last_active"
   end
 
 end

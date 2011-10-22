@@ -2,6 +2,7 @@ Learntable::Application.routes.draw do
   
   match "users/ask"
   match "users/answer"
+  match "users/checkin"
   resources :users
   resources :questions
   

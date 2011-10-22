@@ -53,10 +53,10 @@
     margin: 0 auto 0 auto;
 
     .blackboard {
-        width: 484px;
+        width: 464px;
         height: 382px;
         background: url('whiteboard.png');
-        padding: 20px 30px;
+        padding: 20px 30px 20px 50px;
         position: relative;
 	bottom: 300px;
 	left: 60px;
@@ -67,7 +67,7 @@
             font-size: 24px;
             line-height: 24px;
             text-align: left;
-            margin: 0 0 10px 0;}
+            margin: 0 0 20px 0;}
         .answers {
             float: left;
             padding-left:40px;
@@ -75,7 +75,14 @@
                 font-size: 18px;
                 line-height: 18px;
                 text-align: left;
-                margin: 0 0 5px 0;}
+                margin: 0 0 15px 0;}
+            .answer:hover {
+                font-size: 18px;
+                line-height: 18px;
+                text-align: left;
+                margin: 0 0 15px 0;
+                color: #e00;
+                cursor: pointer;}
         }
     }
     
