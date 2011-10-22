@@ -6,7 +6,7 @@ $ ->
     WEB_SOCKET_DEBUG = true;
     
     #attributes
-    @correctAnswer = 2
+    @correctAnswer = 1
     
     #publish listener
     pubListeners = =>
@@ -14,14 +14,16 @@ $ ->
             correct = @correctAnswer == parseInt $(e.target).attr("answer_num")
             if correct
                 points_inc = 15
+                $(e.target).append "<span style='color: green;'> +15 pts!</span>"
             else 
                 points_inc = 0
+                $(e.target).append "<span style='color: red;'> Wrong!</span>"
             $.post(
                 '/users/answer'
                 question: 
                     points_inc: points_inc
                     id: 1
-                -> console.log "complete"
+                -> console.log points_inc
             )
         
     #listen for questions
@@ -68,6 +70,8 @@ $ ->
         $('.student').each (i, elmnt) ->
             rando = Math.floor(Math.random()*171)
             $(elmnt).css("left", 100 % ((i + 1) * 80))
+            $(elmnt).css("top", 120 % ((17*i + 3) * 33))
+            $(elmnt).css("z-index", 120 % ((17*i + 3) * 33))
         
     #load
     load = ->
