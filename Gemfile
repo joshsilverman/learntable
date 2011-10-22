@@ -34,10 +34,6 @@ group :development, :test do
   gem 'guard-livereload'
 end
 
-group :production do
-  gem 'therubyracer-heroku', '0.8.1.pre3'
-end
-
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
