@@ -1,10 +1,18 @@
-%h2 signed in!
-
 .room_name Lean Startup
 .timer
 .cl
 
 .blackboard
+    .question Who coined the term lean startup
+    .answers
+        .answer-1 A
+        .answer-2 B
+        .answer-3 C
+        .answer-4 D
+
 .classroom
+
+    - (1..10).each do |i|
+        .person{:user_id => i} person
 
 =link_to "Sign out", signout_path
