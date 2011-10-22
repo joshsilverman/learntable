@@ -24,7 +24,7 @@ $ ->
             )
         
     #listen for questions
-    subscribeListeners = ->
+    subscribeListeners = =>
         pusher =  new Pusher '40efb27cae6cf315fd28'
         askChannel = pusher.subscribe 'ask_channel'
         answerChannel = pusher.subscribe 'answer_channel'
@@ -32,7 +32,7 @@ $ ->
         answerChannel.bind 'score', (score) -> 
             console.log(score)
 
-        askChannel.bind 'question', (question) ->
+        askChannel.bind 'question', (question) =>
             answers = [question.answer, question.first_wrong_answer, question.second_wrong_answer, question.third_wrong_answer]
             $('.question').html question.name
             shift_it = (arr) ->
@@ -43,9 +43,9 @@ $ ->
             rando = Math.floor(Math.random()*4)
             shift_it answers for num in [0..rando]
             display_answer answers, num for num in [0..3]
-            @correct_answer = Math.abs(rando-3)
+            @correctAnswer = Math.abs(rando-3)
             
-            console.log @correct_answer
+            console.log @correctAnswer
             console.log answers
             
     #checkin every n seconds
