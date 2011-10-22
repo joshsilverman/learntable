@@ -30,6 +30,11 @@ $ ->
     subscribeListeners = =>
         pusher =  new Pusher '40efb27cae6cf315fd28'
         askChannel = pusher.subscribe 'ask_channel'
+        answerChannel = pusher.subscribe 'answer_channel'
+        
+        answerChannel.bind 'score', (score) -> 
+            console.log(score)
+
         askChannel.bind 'question', (question) =>
             answers = [question.answer, question.first_wrong_answer, question.second_wrong_answer, question.third_wrong_answer]
             $('.question').html question.name

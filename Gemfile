@@ -6,7 +6,6 @@ gem 'rails', '3.1.1'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'pg'
 gem 'pusher'
 gem 'whenever'
 gem 'omniauth'
@@ -28,6 +27,11 @@ group :development, :test do
   gem 'guard'
   gem 'guard-rspec'
   gem 'guard-livereload'
+end
+
+group :production do
+  gem 'pg'
+  gem 'therubyracer-heroku', '0.8.1.pre3'
 end
 
 # To use ActiveModel has_secure_password
