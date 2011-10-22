@@ -16,14 +16,13 @@ class UsersController < ApplicationController
   end
 
   def answer
-#    if not current_user.points 
-#      points = params['points_inc'].to_i
-#    else
-#      points = params['points_inc'].to_i + current_user.points
-#    end
-#    puts points
-    current_user.update_attribute(:points, params['points_inc'].to_i + current_user.points)
-#    Pusher['answer_channel'].trigger('question', params[:num])
+    if not current_user.points 
+      points = params['points_inc'].to_i
+    else
+      points = params['points_inc'].to_i + current_user.points
+    end
+    current_user.update_attribute(:points, points)
+    Pusher['answer_channel'].trigger('score', {:user_id => current_user.id, :points_inc => params['points_inc']})
     render :text => nil
   end
   

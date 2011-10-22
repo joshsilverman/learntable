@@ -27,8 +27,12 @@ $ ->
     subscribeListeners = ->
         pusher =  new Pusher '40efb27cae6cf315fd28'
         askChannel = pusher.subscribe 'ask_channel'
+        answerChannel = pusher.subscribe 'answer_channel'
+        
         askChannel.bind 'question', (question) -> 
             $('.question').html question.name
+        answerChannel.bind 'score', (score) -> 
+            console.log(score)
             
         
     #checkin every n seconds
