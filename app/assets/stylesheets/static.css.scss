@@ -13,9 +13,10 @@
 }     
 
 .room_name{
+    font-family: MarkerFelt, helvetica, ariel, sans-serif;
     width:850px;
     height: 100px;
-    margin-bottom:60px;
+    margin:20px 0 50px 0;
     text-align: left;
     font-size: 36px;
     line-height: 36px;
@@ -35,8 +36,8 @@
     background: url('backgroundwall.png');
     
     .teacher {
-	width: 156px;
-	height: 200px;
+	width: 186px;
+	height: 230px;
 	background: url('teacher.png');
 	float: right;
 	position: relative;
@@ -53,10 +54,10 @@
     margin: 0 auto 0 auto;
 
     .blackboard {
-        width: 464px;
-        height: 382px;
+        width: 498px;
+        height: 402px;
         background: url('whiteboard.png');
-        padding: 20px 30px 20px 50px;
+        padding: 30px 30px 20px 50px;
         position: relative;
 	bottom: 300px;
 	left: 60px;
@@ -105,12 +106,12 @@
         }
         .boy {
             background: url('boy.png');
-            width: 113px;
-            height: 150px;}
+            width: 115px;
+            height: 148px;}
         .girl {
             background: url('girl.png');
-            width: 115px;
-            height: 150px;}
+            width: 111px;
+            height: 143px;}
     }
 }
 
