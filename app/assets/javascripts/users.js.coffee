@@ -18,9 +18,8 @@ $ ->
                 points_inc = 0
             $.post(
                 '/users/answer'
-                question: 
-                    points_inc: points_inc
-                    id: 1
+                points_inc: points_inc
+                id: 1
                 -> console.log "complete"
             )
         
