@@ -8,4 +8,5 @@ class StaticController < ApplicationController
       render 'static/home'
     end
   end
+
 end

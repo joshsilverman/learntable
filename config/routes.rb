@@ -2,7 +2,8 @@ Learntable::Application.routes.draw do
   resources :users
   
   match "static/home" => "static#home"
-
+  match "/auth/facebook/callback" => "session#create"
+  match "/signout" => "session#destroy", :as => :signout
   root :to => "static#home"
   
   # The priority is based upon order of creation:
