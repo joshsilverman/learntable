@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
       user.name = auth["user_info"]["name"]
     end
   end	
+  
+  def self.active_ids
+    User.where("'users'.'last_active' >= ?", Time.now - 10).map { |u| u.id }
+  end
 end
