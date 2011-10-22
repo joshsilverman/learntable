@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20111022054920) do
 
-  create_table "questions", :force => true do |t|
-    t.string "name"
-    t.string "answer"
-    t.string "first_wrong_answer"
-    t.string "second_wrong_answer"
-    t.string "third_wrong_answer"
-  end
-
   create_table "users", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
