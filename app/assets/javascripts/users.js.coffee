@@ -27,26 +27,31 @@ $ ->
         $.get(
             "/users/checkin"
             (active_ids) ->
-                console.log "checked in"
-                old_ids = $(".person").map (i, elmnt) ->
+                old_ids = $(".student").map (i, elmnt) ->
                     parseInt($(elmnt).attr 'user_id')
-                console.log old_ids
-                console.log active_ids
                 #add new
                 $.each active_ids, (i, active_id) ->
                     if ($.inArray active_id, old_ids) == -1 
-                        console.log "add #{active_id}"
-                        $('.classroom').append "<div class='person' user_id='#{active_id}'>#{active_id}</div>"
+                        $('.student_barrier').append "<div class='student boy' user_id='#{active_id}'>#{active_id}</div>"
                 #remove old
                 $.each old_ids, (i, old_id) ->
                     if ($.inArray old_id, active_ids) == -1 
-                        console.log "remove #{old_id}"
-                        $(".person[user_id=#{old_id}]").remove()
+                        $(".student[user_id=#{old_id}]").remove()
+                positionStudents()
+                
         )
+        
+    #position student
+    positionStudents = ->
+        $('.student').each (i, elmnt) ->
+            console.log i
+            console.log 100 % ((i + 1) * 60)
+            $(elmnt).css("left", 100 % ((i + 1) * 80))
         
     #load
     load = ->
+        positionStudents()
         pubListeners()
         subscribeListeners()
-        setInterval(checkin, 1000)
+        setInterval(checkin, 500)
     load()

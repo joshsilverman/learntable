@@ -22,7 +22,7 @@ end
 
 gem 'jquery-rails'
 gem 'execjs'
-#gem 'therubyracer'
+gem 'therubyracer'
 
 group :development, :test do
   gem 'guard'
