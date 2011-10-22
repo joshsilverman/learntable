@@ -1,9 +1,21 @@
+@font-face {
+    font-family: MarkerFelt;
+    src: url(http://www.bernardjhuang.com/font/markerfeltnormal.ttf);
+}
+
 body {
-  background-color: black;
+  background: url('bg.png');
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px; }
+  
+h1 {
+  text-align: center;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  margin-bottom: 100px;
+  color: white; }
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;

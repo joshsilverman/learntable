@@ -4,8 +4,8 @@
 
 .header{
     width: 100%;
-    font-family: helvetica, ariel, sans-serif;
-    margin: 10px 0;
+    font-family: MarkerFelt, helvetica, ariel, sans-serif;
+    margin: 20px 0;
     text-align: center;
     font-size: 72px;
     line-height: 72px;
@@ -15,6 +15,7 @@
 .room_name{
     width:850px;
     height: 100px;
+    margin-bottom:60px;
     text-align: left;
     font-size: 36px;
     line-height: 36px;
@@ -26,6 +27,87 @@
     height:100px;
     float:right;
 }
+
+.backgroundwall {
+    width: 800px;
+    height: 220px;
+    margin: 0 auto;
+    background: url('backgroundwall.png');
+    
+    .teacher {
+	width: 156px;
+	height: 200px;
+	background: url('teacher.png');
+	float: right;
+	position: relative;
+	right: 80px;
+	top: 160px;
+	z-index: 10;
+    }
+}
+        
+.classroom {
+    width: 800px;
+    height: 400px;
+    background: url('woodfloorlearntable.jpg');
+    margin: 0 auto 0 auto;
+
+    .blackboard {
+        width: 484px;
+        height: 382px;
+        background: url('whiteboard.png');
+        padding: 20px 30px;
+        position: relative;
+	bottom: 300px;
+	left: 60px;
+	z-index: 5;
+
+        .question {
+            width: 100%;
+            font-size: 24px;
+            line-height: 24px;
+            text-align: left;
+            margin: 0 0 10px 0;}
+        .answers {
+            float: left;
+            padding-left:40px;
+            .answer {
+                font-size: 18px;
+                line-height: 18px;
+                text-align: left;
+                margin: 0 0 5px 0;}
+        }
+    }
+    
+    .student_barrier{
+        width:100%;
+        position: relative;
+	bottom: 350px;
+        z-index: 10;
+        
+        .student {
+            position:absolute;
+            float:left; 
+            
+            .bulb {
+                width: 30px;
+                height: 53px;
+                margin-top:-60px;
+                margin-left: 45px;
+                background: url('lightbulb.png')}
+        }
+        .boy {
+            background: url('boy.png');
+            width: 113px;
+            height: 150px;}
+        .girl {
+            background: url('girl.png');
+            width: 115px;
+            height: 150px;}
+    }
+}
+
+
 .fb_login{
     width:314px;
     height:63px;
