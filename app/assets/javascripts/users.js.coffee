@@ -20,8 +20,22 @@ $ ->
     subscribeListeners = ->
         pusher =  new Pusher '40efb27cae6cf315fd28'
         askChannel = pusher.subscribe 'ask_channel'
-        askChannel.bind 'question', (question) -> $('.question').html question.name
-        
+        askChannel.bind 'question', (question) ->
+            answers = [question.answer, question.first_wrong_answer, question.second_wrong_answer, question.third_wrong_answer]
+            $('.question').html question.name
+            shift_it = (arr) ->
+                temp = arr.shift()
+                arr.push(temp)
+            display_answer = (arr, num) ->
+                $(".answer[answer_num=#{num}]").html arr[num]
+            rando = Math.floor(Math.random()*4)
+            shift_it answers for num in [0..rando]
+            display_answer answers, num for num in [0..3]
+            @correct_answer = Math.abs(rando-3)
+            
+            console.log @correct_answer
+            console.log answers
+            
     #checkin every n seconds
     checkin = ->
         $.get(
@@ -44,6 +58,7 @@ $ ->
     #position student
     positionStudents = ->
         $('.student').each (i, elmnt) ->
+            rando = Math.floor(Math.random()*171)
             $(elmnt).css("left", 100 % ((i + 1) * 80))
         
     #load
