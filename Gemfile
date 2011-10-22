@@ -9,6 +9,10 @@ gem 'sqlite3'
 gem 'pg'
 gem 'pusher'
 
+<<<<<<< HEAD
+gem 'omniauth'
+=======
+>>>>>>> b1823a999c47c607ec439fef7f595067289a0417
 
 # Gems used only for assets and not required
 # in production environments by default.
