@@ -13,6 +13,8 @@ class StaticController < ApplicationController
       
       #get all active
       @user_ids = User.active_ids
+      
+      render "static/home.html.erb"
     end
   end
 

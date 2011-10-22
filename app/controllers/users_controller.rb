@@ -7,12 +7,22 @@ Pusher.secret = '4afb53de5299584d36ac'
 class UsersController < ApplicationController
 
   def ask
+    puts "1!"
     questions = Question.all
     question = questions[rand(questions.size)]
     Pusher['ask_channel'].trigger('question', question)
-    # sleep 30
-    # question = questions[rand(questions.size)]
-    # Pusher['ask_channel'].trigger('question', question)
+    puts "2!"
+    sleep 15
+    question = questions[rand(questions.size)]
+    Pusher['ask_channel'].trigger('question', question)
+    puts "3!"
+    sleep 15
+    question = questions[rand(questions.size)]
+    Pusher['ask_channel'].trigger('question', question)
+    puts "4!"
+    sleep 45
+    question = questions[rand(questions.size)]
+    Pusher['ask_channel'].trigger('question', question)
   end
 
   def answer
