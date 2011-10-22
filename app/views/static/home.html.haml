@@ -1,5 +1,4 @@
 -if current_user
-	Welcome!
-	=link_to "Sign out", signout_path
+    =render :partial => 'signed_in'
 -else
-	=link_to "Sign in with Facebook", "/auth/facebook"
+    =render :partial => 'signed_out'

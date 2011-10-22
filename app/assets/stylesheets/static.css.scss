@@ -2,6 +2,44 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.room_name {
-     
+.header{
+    width: 100%;
+    font-family: helvetica, ariel, sans-serif;
+    margin: 10px 0;
+    text-align: center;
+    font-size: 72px;
+    line-height: 72px;
+    
+}     
 
+.room_name{
+    width:850px;
+    height: 100px;
+    float:left;
+}
+
+.timer{
+    width:100px;
+    height:100px;
+    float:right;
+}
+.fb_login{
+    width:314px;
+    height:63px;
+    margin:0 auto;
+
+    #loginbtn:active {
+        background-position: 0px -126px;
+    }
+
+    #loginbtn:hover {
+        background-position: 0px -63px;
+    }
+
+    #loginbtn {
+        background: url('https://s3.amazonaws.com/static.turntable.fm/images/indexlogin/button_fb_sprite.png') 0px 0px no-repeat;
+        width: 314px;
+        height: 63px;
+        cursor: pointer;
+    }
+}
