@@ -1,9 +1,3 @@
-require 'pusher'
-
-Pusher.app_id = '9963'
-Pusher.key = '40efb27cae6cf315fd28'
-Pusher.secret = '4afb53de5299584d36ac'
-
 class StaticController < ApplicationController
 
   def home
