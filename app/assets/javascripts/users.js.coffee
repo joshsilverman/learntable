@@ -30,7 +30,10 @@ $ ->
         answerChannel = pusher.subscribe 'answer_channel'
         
         answerChannel.bind 'score', (score) -> 
-            console.log(score)
+            console.log score['user_id']
+            console.log $(".student[user_id=#{score['user_id']}]")
+            $(".student[user_id=#{score['user_id']}]").addClass "waving"
+            $(".student[user_id=#{score['user_id']}]").html "<div class='boysarm'><div>"
 
         askChannel.bind 'question', (question) =>
             answers = [question.answer, question.first_wrong_answer, question.second_wrong_answer, question.third_wrong_answer]
@@ -58,7 +61,7 @@ $ ->
                 #add new
                 $.each active_ids, (i, active_id) ->
                     if ($.inArray active_id, old_ids) == -1 
-                        $('.student_barrier').append "<div class='student boy' user_id='#{active_id}'>#{active_id}</div>"
+                        $('.student_barrier').append "<div><div class='student boy' user_id='#{active_id}'>#{active_id}</div></div>"
                 #remove old
                 $.each old_ids, (i, old_id) ->
                     if ($.inArray old_id, active_ids) == -1 

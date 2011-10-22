@@ -104,10 +104,31 @@
                 margin-left: 45px;
                 background: url('lightbulb.png')}
         }
+            
         .boy {
             background: url('boy.png');
             width: 115px;
-            height: 148px;}
+            height: 148px;
+
+            &.waving {
+                width: 106px !important;
+                height: 148px !important;
+                background: url('boywithoutarm.png') !important;
+                float: left;
+                clear: both;
+            }
+
+            .boysarm {
+                width: 86px;
+                height: 91px;
+                background: url('boysarm.png');
+                background-repeat:no-repeat;
+                position: relative;
+                left: 25px;
+                top: 41px;
+                z-index: -1;
+            }
+        }
         .girl {
             background: url('girl.png');
             width: 111px;
