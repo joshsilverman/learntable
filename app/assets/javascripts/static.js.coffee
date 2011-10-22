@@ -4,8 +4,5 @@
 
 
 $ ->
-    console.log $('#loginbtn')
     $('#loginbtn').bind 'click', (event) -> 
         window.location.href = "http://localhost:3000/auth/facebook"
-    
-    

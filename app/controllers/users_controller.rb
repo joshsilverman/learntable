@@ -5,10 +5,14 @@ Pusher.key = '40efb27cae6cf315fd28'
 Pusher.secret = '4afb53de5299584d36ac'
 
 class UsersController < ApplicationController
-  
+
   def ask
-    Pusher['ask_channel'].trigger('question', params[:num])
-    render :text => nil
+    questions = Question.all
+    question = questions[rand(questions.size)]
+    Pusher['ask_channel'].trigger('question', question)
+    # sleep 30
+    # question = questions[rand(questions.size)]
+    # Pusher['ask_channel'].trigger('question', question)
   end
 
   def answer

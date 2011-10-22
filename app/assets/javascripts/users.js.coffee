@@ -5,13 +5,21 @@ $ ->
         window.console.log message
     WEB_SOCKET_DEBUG = true;
     
+    #attributes
+    @correctAnswer = 2
+    
     #publish listener
-    pubListeners = ->
-        $('.answer').bind 'click', (elmnt) ->
+    pubListeners = =>
+        $('.answer').bind 'click', (e) =>
+            correct = @correctAnswer == parseInt $(e.target).attr("answer_num")
+            if correct
+                points_inc = 15
+            else 
+                points_inc = 0
             $.post(
                 '/users/answer'
                 question: 
-                    response_num: 1
+                    points_inc: points_inc
                     id: 1
                 -> console.log "complete"
             )
