@@ -7,6 +7,6 @@ class User < ActiveRecord::Base
   end	
   
   def self.active_ids
-    User.where("'users'.'last_active' >= ?", Time.now - 3).map { |u| u.id }
+    User.where("'users'.'last_active' >= ?", Time.now - 8).map { |u| u.id }
   end
 end
