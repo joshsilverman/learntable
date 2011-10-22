@@ -1,1 +1,8 @@
+
 %button.ask ask
+
+-if current_user
+	Welcome!
+	=link_to "Sign out", signout_path
+-else
+	=link_to "Sign in with Facebook", "/auth/facebook"
