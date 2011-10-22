@@ -8,9 +8,11 @@ class UsersController < ApplicationController
 
   def ask
     questions = Question.all
-    Pusher['ask_channel'].trigger('question', questions.first.name)
-    # sleep 10
-    # Pusher['ask_channel'].trigger('question', questions.last.name)
+    question = questions[rand(questions.size)]
+    Pusher['ask_channel'].trigger('question', question)
+    # sleep 30
+    # question = questions[rand(questions.size)]
+    # Pusher['ask_channel'].trigger('question', question)
   end
 
   def answer
