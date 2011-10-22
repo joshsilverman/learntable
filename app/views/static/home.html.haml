@@ -1,8 +1,18 @@
+.test_buttons
+    %button.ask ask
 
-%button.ask ask
+.question Question?
+.answers
+    .answer-1 A
+    .answer-2 B
+    .answer-3 C
+    .answer-4 D
+
+- (1..10).each do |i|
+    .person{:user_id => i} person
 
 -if current_user
-	Welcome!
-	=link_to "Sign out", signout_path
+    Welcome!
+    =link_to "Sign out", signout_path
 -else
-	=link_to "Sign in with Facebook", "/auth/facebook"
+    =link_to "Sign in with Facebook", "/auth/facebook"
