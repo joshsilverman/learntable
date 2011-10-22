@@ -1,6 +1,7 @@
 Learntable::Application.routes.draw do
+  
+  match "users/ask"
   resources :questions
-
   resources :users
   
   match "static/home" => "static#home"
