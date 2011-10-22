@@ -20,7 +20,7 @@ $ ->
     subscribeListeners = ->
         pusher =  new Pusher '40efb27cae6cf315fd28'
         askChannel = pusher.subscribe 'ask_channel'
-        askChannel.bind 'question', (num) -> $('.question').html "Can you count to #{num}?"
+        askChannel.bind 'question', (question) -> $('.question').html question.name
         
     #checkin every n seconds
     checkin = ->
@@ -44,8 +44,6 @@ $ ->
     #position student
     positionStudents = ->
         $('.student').each (i, elmnt) ->
-            console.log i
-            console.log 100 % ((i + 1) * 60)
             $(elmnt).css("left", 100 % ((i + 1) * 80))
         
     #load
@@ -53,5 +51,5 @@ $ ->
         positionStudents()
         pubListeners()
         subscribeListeners()
-        setInterval(checkin, 500)
+        setInterval(checkin, 2500)
     load()
