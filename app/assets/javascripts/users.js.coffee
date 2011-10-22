@@ -39,6 +39,9 @@ $ ->
         askChannel.bind 'question', (question) =>
             answers = [question.answer, question.first_wrong_answer, question.second_wrong_answer, question.third_wrong_answer]
             $('.question').html question.name
+            $(".student").removeClass "waving"
+            $(".boysarm").remove()
+            
             shift_it = (arr) ->
                 temp = arr.shift()
                 arr.push(temp)
@@ -48,9 +51,6 @@ $ ->
             shift_it answers for num in [0..rando]
             display_answer answers, num for num in [0..3]
             @correctAnswer = Math.abs(rando-3)
-            
-            $(".student").removeClass "waving"
-            $(".boysarm").remove()
             
     #checkin every n seconds
     checkin = ->
