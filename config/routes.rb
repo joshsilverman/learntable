@@ -1,8 +1,9 @@
 Learntable::Application.routes.draw do
   
   match "users/ask"
-  resources :questions
+  match "users/answer"
   resources :users
+  resources :questions
   
   match "static/home" => "static#home"
   match "/auth/facebook/callback" => "session#create"
