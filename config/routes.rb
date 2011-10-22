@@ -1,5 +1,7 @@
 Learntable::Application.routes.draw do
   resources :users
+  
+  match "static/home" => "static#home"
 
   root :to => "static#home"
   
