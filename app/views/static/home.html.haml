@@ -1,18 +1,4 @@
-.test_buttons
-    %button.ask ask
-
-.question{:question_id => -1} Question?
-.answers
-    .answer{:response_num => 1} A
-    .answer{:response_num => 2} B
-    .answer{:response_num => 3} C
-    .answer{:response_num => 4} D
-
-- (1..10).each do |i|
-    .person{:user_id => i} person
-
 -if current_user
-    Welcome!
-    =link_to "Sign out", signout_path
+    =render :partial => 'signed_in'
 -else
-    =link_to "Sign in with Facebook", "/auth/facebook"
+    =render :partial => 'signed_out'

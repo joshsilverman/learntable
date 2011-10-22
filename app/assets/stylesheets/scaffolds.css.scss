@@ -1,5 +1,5 @@
 body {
-  background-color: #fff;
+  background-color: black;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -16,12 +16,12 @@ pre {
   font-size: 11px; }
 
 a {
-  color: #000;
+  color: blue;
   &:visited {
     color: #666; }
   &:hover {
     color: #fff;
-    background-color: #000; } }
+    background-color: #fff; } }
 
 div {
   &.field, &.actions {
@@ -54,3 +54,10 @@ div {
   ul li {
     font-size: 12px;
     list-style: square; } }
+
+.cl{
+    clear:both; }
+    
+.container{
+    width:960px;
+    margin:0 auto; }
