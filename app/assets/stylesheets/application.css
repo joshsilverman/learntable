@@ -5,3 +5,5 @@
  *= require_self
  *= require_tree . 
 */
+
+#header{ width: 200px; margin: 0 auto;}

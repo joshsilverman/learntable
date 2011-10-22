@@ -5,12 +5,14 @@ $ ->
         window.console.log message
     WEB_SOCKET_DEBUG = true;
     
-    #ask listener
+    #publish listener
     pubListeners = ->
-        $('button.ask').bind 'click', ->
+        $('.answer').bind 'click', (elmnt) ->
             $.post(
-                '/users/ask'
-                num: new Date().getTime()
+                '/users/answer'
+                question: 
+                    response_num: 1
+                    id: 1
                 -> console.log "complete"
             )
         

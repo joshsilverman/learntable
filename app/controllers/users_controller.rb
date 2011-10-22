@@ -12,6 +12,11 @@ class UsersController < ApplicationController
     # sleep 10
     # Pusher['ask_channel'].trigger('question', questions.last.name)
   end
+
+  def answer
+    Pusher['ask_channel'].trigger('question', params[:num])
+    render :text => nil
+  end
   
   def index
     @users = User.all
