@@ -32,9 +32,7 @@ $ ->
         askChannel = pusher.subscribe 'ask_channel'
         answerChannel = pusher.subscribe 'answer_channel'
         
-        answerChannel.bind 'score', (score) -> 
-            console.log score['user_id']
-            console.log $(".student[user_id=#{score['user_id']}]")
+        answerChannel.bind 'score', (score) ->
             $(".student[user_id=#{score['user_id']}]").addClass "waving"
             $(".student[user_id=#{score['user_id']}]").html "<div class='boysarm'><div>"
 
@@ -51,8 +49,8 @@ $ ->
             display_answer answers, num for num in [0..3]
             @correctAnswer = Math.abs(rando-3)
             
-            console.log @correctAnswer
-            console.log answers
+            $(".student").removeClass "waving"
+            $(".boysarm").remove()
             
     #checkin every n seconds
     checkin = ->
