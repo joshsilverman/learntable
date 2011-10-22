@@ -1,0 +1,35 @@
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2011-10-21 20:30:52 -0400
+Served asset /rails.png - 304 Not Modified (13ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2011-10-21 20:45:46 -0400
+Served asset /rails.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2011-10-21 20:45:59 -0400
+Served asset /rails.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2011-10-21 20:46:01 -0400
+Served asset /rails.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-21 20:46:23 -0400
+
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+
+Rendered /Users/jasonurton/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (23.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-21 20:46:52 -0400
+
+ArgumentError (missing :action):
+  config/routes.rb:4:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+Rendered /Users/jasonurton/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /Users/jasonurton/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (350.7ms)
+Rendered /Users/jasonurton/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (358.7ms)
