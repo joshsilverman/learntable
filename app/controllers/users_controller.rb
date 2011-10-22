@@ -5,10 +5,12 @@ Pusher.key = '40efb27cae6cf315fd28'
 Pusher.secret = '4afb53de5299584d36ac'
 
 class UsersController < ApplicationController
-  
+
   def ask
-    Pusher['ask_channel'].trigger('question', params[:num])
-    render :text => nil
+    questions = Question.all
+    Pusher['ask_channel'].trigger('question', questions.first.name)
+    # sleep 10
+    # Pusher['ask_channel'].trigger('question', questions.last.name)
   end
   
   def index
