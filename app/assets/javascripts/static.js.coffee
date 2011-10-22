@@ -4,13 +4,5 @@
 
 
 $ ->
-    choice = 0
-    console.log $('#loginbtn')
     $('#loginbtn').bind 'click', (event) -> 
         window.location.href = "http://localhost:3000/auth/facebook"
-        
-    $('.answer').click( (e) =>
-        @choice = $(e.target).attr('answer_id')
-        console.log @choice)
-    
-    $('.room_name').click( (e) => console.log @choice)
