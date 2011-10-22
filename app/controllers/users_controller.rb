@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   end
   
   def checkin
-    current_user.update_attribute :last_active, Time.now
+    current_user.update_attribute :last_active, Time.now if current_user
     render :json => User.active_ids
   end
   

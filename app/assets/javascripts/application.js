@@ -7,3 +7,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require rotate.js
+//= require transform.js

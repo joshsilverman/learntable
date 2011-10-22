@@ -1,0 +1,1 @@
+((function(){$(function(){return $("#loginbtn").bind("click",function(a){return window.location.href="http://localhost:3000/auth/facebook"})})})).call(this)

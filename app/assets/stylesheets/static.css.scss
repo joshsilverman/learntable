@@ -142,15 +142,19 @@
     height:63px;
     margin:0 auto;
 
-    #loginbtn:active {
+    .loginbtn {
+        display:block;
+    }
+    
+    .loginbtn:active {
         background-position: 0px -126px;
     }
 
-    #loginbtn:hover {
+    .loginbtn:hover {
         background-position: 0px -63px;
     }
 
-    #loginbtn {
+    .loginbtn {
         background: url('https://s3.amazonaws.com/static.turntable.fm/images/indexlogin/button_fb_sprite.png') 0px 0px no-repeat;
         width: 314px;
         height: 63px;
