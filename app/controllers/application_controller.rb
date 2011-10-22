@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
     def ensure_domain 
       url = request.url
-      if url.include?('learntable.com')
+      if url.include?('www.learntable.com')
           redirect_to url.gsub('www.learntable.com', 'learntable.com')
       end
     end
