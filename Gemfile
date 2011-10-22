@@ -24,6 +24,12 @@ gem 'jquery-rails'
 gem 'execjs'
 gem 'therubyracer'
 
+group :development, :test do
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-livereload'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

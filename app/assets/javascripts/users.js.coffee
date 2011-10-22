@@ -9,3 +9,21 @@ $ ->
     channel = pusher.subscribe 'test_channel'
     channel.bind 'my_event', (data) ->
       alert data
+    
+    #ask listener
+    pubListeners = ->
+        console.log "a"
+        $('button.ask').bind 'click', ->
+            $.get(
+                '/static/ask'
+                -> console.log "complete"
+            )
+        
+    #listen for questions
+    subscribeListeners = ->
+        channel.bind 'ask', (thing) -> alert('What up?')
+        
+    #load
+    load = ->
+        pubListeners()
+    load()
